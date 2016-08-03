@@ -1,34 +1,37 @@
-# def trickySum(a,b,c):
-#     intList = [a,b,c]
-#     total = 0
-#     for i in range(0,len(intList)):
-#         if intList[i] == 13:
-#             break
-#         else:
-#             total = total + intList[i]
-#     print(total)
+# lst = [[1, 2, 3],
+#         [4, 5, 6]]
 #
+# lst[1][1]
 #
-# def lucky_sum(a, b, c):
-#   list = [a,b,c]
-#   sum = 0
-#   if 13 in list:
-#      i = list.index(13)
-#      for x in list[:i]:
-#          sum += x
-#   else:
-#       sum = a + b + c
-#   return sum
-# 
-# def lucky_sum(a, b, c):
-#     lst = [a, b, c]
-#     if 13 in lst:
-#         return sum(lst[:lst.index(13)])
-#     else:
-#         return sum(lst)
-#
-#
-# print(lucky_sum(13, 3, 3))
-# print(lucky_sum(3, 13, 3))
-# print(lucky_sum(3, 3, 13))
-print(lucky_sum(3, 3, 3))
+# dct = {'first': {'one': 1, 'two': 2, 'three':3},
+#         'second':{'four': 4, 'five': 5, 'six': 6}}
+# #
+# for key, value in dct.items():
+#     print(value)
+# #     print(str(key) + ': ' + str(value))
+# #
+# # lst_comp = [str(key) + ': ' + str(value) for key, value in dct.items()]
+# # print(lst_comp)
+
+# def group_by(iterable, key):
+#     """Place each item in an iterable into a bucket based on calling the key
+#     function on the item."""
+#     group_to_items = {}
+#     for item in iterable:
+#         group = key(item)
+#         if group not in group_to_items:
+#             group_to_items[group] = []
+#         group_to_items[group].append(item)
+#     return group_to_items
+
+total = 0
+one = [1, 2, 3, 4, 5]
+two = [5, 4, 3, 2]
+
+for x in one:
+    total += x * x
+
+for x in two:
+    total -= x * x
+
+print(total)

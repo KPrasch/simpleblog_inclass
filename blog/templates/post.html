@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+        <div class="row">
+
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">
+
+                <h1 class="page-header">
+                    {{ post.title }}
+                </h1>
+
+                <h2>
+                    <a href="#"></a>
+                </h2>
+                <p class="lead">
+                    by <a href="index.php">{{ post.author }}</a>
+                </p>
+                <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.date_created }}</p>
+                <hr>
+                <img class="img-responsive" src="/media/{{ post.img }}">
+                <hr>
+                <p>{{ post.content }}</p>
+
+                <hr>
+</div>
+</div>
+{% endblock %}

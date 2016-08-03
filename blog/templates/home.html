@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load thumbnail %}
 {% block content %}
         <div class="row">
 
@@ -12,14 +13,17 @@
 
                 {% for posts in post %}
                 <h2>
-                    <a href="#">{{ posts.title }}</a>
+                    <a href="/blog/{{ posts.category }}/{{ posts.slug }}">{{ posts.title }}</a>
                 </h2>
                 <p class="lead">
                     by <a href="index.php">{{ posts.author}}</a>
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span> Posted on {{ posts.date_created }}</p>
                 <hr>
-                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                {% thumbnail posts.img '300x300' as thumb %}
+                <img class="postListImg" src="{{ thumb.url }}" />
+
+
                 <hr>
                 <p>{{ posts.content|slice:":400" }} ...</p>
                 <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
